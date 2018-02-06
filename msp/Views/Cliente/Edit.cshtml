@@ -1,0 +1,247 @@
+﻿@model msp.Models.PESSOA
+@{
+    ViewBag.Title = "Editar CLiente";
+}
+<style>
+    .tipo {
+        margin-bottom: 10px;
+    }
+</style>
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+
+        <div class="col-md-12">
+            <h3><i class="fa fa-file-o"></i>&nbsp;Editar Cliente</h3>
+            <div class="tipo col-md-pull-2">
+                <label>Tipo de Cliente</label>
+                @Html.DropDownListFor(model => model.PES_TIP_FJ, new SelectList(ViewBag.ListaTipoPessoa, "Key", "Value", Model.PES_TIP), new { @class = "form-control" })
+                @Html.HiddenFor(x => x.PES_ISN)
+                @Html.HiddenFor(x => x.PES_TIP)
+                @Html.HiddenFor(x => x.PES_TIP_SEQ)
+                @Html.HiddenFor(x => x.PES_STS)
+            </div>
+
+            <div id="pnl_pesfis" class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h4>Dados Pessoa Física</h4>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="col-md-8">
+                            <label>Nome</label>
+                            <input type="text" id="PES_NOM" name="PES_NOM" value="@Model.PES_NOM" class="form-control" required/>
+                        </div>
+                        <div class="col-md-4">
+                            <label>Como gostaria de ser chamado</label>
+                            <input type="text" id="PES_CHA" name="PES_CHA" value="@Model.PES_CHA" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <label>CPF</label>
+                            <input type="text" id="PES_CPF_CNP" name="PES_CPF_CNP" value="@Model.PES_CPF_CNP" class="form-control" required/>
+                        </div>
+                        <div class="col-md-3">
+                            <label>RG</label>
+                            <input type="text" id="PES_RG" name="PES_RG" value="@Model.PES_RG" class="form-control" required/>
+                        </div>
+                        @*<div class="col-md-3">
+                            <label>Data Nascimento</label>
+                            @{if (Model.PES_DAT_NAS != null)
+                                {
+                                    string dt = Model.PES_DAT_NAS.Value.ToString("dd/MM/yyyy");
+                                    <input type="datetime" id="PES_DAT_NAS" name="PES_DAT_NAS" value="@dt" class="form-control" />
+                                }
+                                else
+                                {
+                                    <input type="datetime" id="PES_DAT_NAS" name="PES_DAT_NAS" value="@Model.PES_DAT_NAS" class="form-control" />
+                                }
+                            }
+                        </div>*@
+                        <div class="col-md-3">
+                            <label>Email</label>
+                            @{if (Model.PES_DAT_NAS != null)
+                                {
+                                    string dt = Model.PES_DAT_NAS.Value.ToString("dd/MM/yyyy");
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-dtnasc"><i class="fa fa-calendar"></i></span>
+                                        <input type="datetime" id="PES_DAT_NAS" name="PES_DAT_NAS" class="form-control" value="@dt" />
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-dtnasc"><i class="fa fa-calendar"></i></span>
+                                        <input type="datetime" id="PES_DAT_NAS" name="PES_DAT_NAS" class="form-control" value="@Model.PES_DAT_NAS" />
+                                    </div>
+                                }
+                            }
+                        </div>
+
+                        <div class="col-md-3">
+                            <label>Sexo</label>
+                            @*@Html.Label("Sexo", htmlAttributes: new { @class = "control-label col-md-2" })*@
+                            @Html.HiddenFor(model => model.PES_SEX_ISN)
+                            @Html.DropDownList("PES_SEX_ISN", new SelectList(ViewBag.ListaSexo, "Value", "Text", Model.PES_SEX_ISN ?? -1), new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <label>Estado Civil</label>
+                            @Html.HiddenFor(model => model.PES_ESC_ISN)
+                            @Html.DropDownList("PES_ESC_ISN", new SelectList(ViewBag.EstadoCivil, "Value", "Text", Model.PES_ESC_ISN ?? 0), new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-3">
+                            <label>Religião</label>
+                            @Html.HiddenFor(model => model.PES_REL_ISN)
+                            @Html.DropDownList("PES_REL_ISN", new SelectList(ViewBag.Religiao, "Value", "Text", Model.PES_REL_ISN ?? -1), new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-3">
+                            <label>Profissão</label>
+                            @Html.HiddenFor(model => model.PES_PRO_ISN)
+                            @Html.DropDownList("PES_PRO_ISN", new SelectList(ViewBag.Religiao, "Value", "Text", Model.PES_PRO_ISN ?? -1), new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-3">
+                            <label>Email</label>
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-email"><i class="fa fa-envelope-o"></i></span>
+                                <input id="PES_EMA" name="PES_EMA" class="form-control" value="@Model.PES_EMA" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <label>Pai</label>
+                            <input type="text" id="PES_NOM_PAI" name="PES_NOM_PAI" value="@Model.PES_NOM_PAI" class="form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Mãe</label>
+                            <input type="text" id="PES_NOM_MAE" name="PES_NOM_MAE" value="@Model.PES_NOM_MAE" class="form-control" />
+                        </div>
+                    </div>
+                </div> <!-- FIM panel-body -->
+            </div><!-- FIM panel-pessoa-fisica -->
+
+            <div id="pnl_pesjur" class="panel panel-default" style="display:none">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h4>Dados Pessoa Jurídica</h4>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <label>Empresa/Razão Social</label>
+                            <input type="text" id="PES_CHA" name="PES_CHA" value="@Model.PES_CHA" class="form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Nome Fantasia</label>
+                            <input type="text" id="PES_NOM" name="PES_NOM" value="@Model.PES_NOM" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-4">
+                            <label>CNPJ</label>
+                            <input type="text" id="PES_CPF_CNP" name="PES_CPF_CNP" value="@Model.PES_CPF_CNP" class="form-control" />
+                        </div>
+                        <div class="col-md-4">
+                            <label>Insc.Estadual</label>
+                            <input type="text" id="PES_CGF" name="PES_CGF" value="@Model.PES_CGF" class="form-control" />
+                        </div>
+                        <div class="col-md-4">
+                            <label>Ramo de Atividade</label>
+                            <input type="text" id="PES_RAM" name="PES_RAM" value="@Model.PES_RAM" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pnl_endereco" class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h4>Dados Endereço</h4>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="col-md-10">
+                            <label>Endereço</label>
+                            <input type="text" id="PES_END" name="PES_END" value="@Model.PES_END" class="form-control" required/>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Numero</label>
+                            <input type="text" id="PES_END_NUM" name="PES_END_NUM" value="@Model.PES_END_NUM" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <label>Complemento</label>
+                            <input type="text" id="PES_END_COM" name="PES_END_COM" value="@Model.PES_END_COM" class="form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Bairro</label>
+                            <input type="text" id="PES_BAI_NF" name="PES_BAI_NF" value="@Model.PES_BAI_NF" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <label>Cidade</label>
+                            <input type="text" id="PES_CID_NF" name="PES_CID_NF" value="@Model.PES_CID_NF" class="form-control" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Uf</label>
+                            <input type="text" id="PES_UF_NF" name="PES_UF_NF" value="@Model.PES_UF_NF" class="form-control" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Cep</label>
+                            <input type="text" id="PES_CEP" name="PES_CEP" value="@Model.PES_CEP" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-12">
+                            <label>Observação</label>
+                            <input type="text" id="PES_OBS" name="PES_OBS" value="@Model.PES_OBS" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-success"><i class="fa fa-check"></i>&nbsp;Gravar</button>
+            @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $().ready(function () {
+            //$("#PES_TIP_FJ").val("F");
+            $("#PES_DAT_NAS").mask('99/99/9999');
+            frmcpfcnpj("PES_CPF_CNP");
+            $("form").submit(function (e) {
+                validar_select('PES_PRO_ISN', 'Campo obrigatório');
+            });
+
+            $("#PES_TIP_FJ").change(function () {
+                if ($("#PES_TIP_FJ").val() == "J") {
+                    $("#pnl_pesjur").show();
+                    $("#pnl_pesfis").hide();
+                }
+                else {
+                    $("#pnl_pesjur").hide();
+                    $("#pnl_pesfis").show();
+                }
+            });
+        });
+    </script>
+}
+
+

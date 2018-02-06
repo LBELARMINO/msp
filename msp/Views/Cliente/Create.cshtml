@@ -1,0 +1,220 @@
+﻿@using msp.MeusHtmlHelpers
+@model msp.Models.PESSOA
+@{
+    ViewBag.Title = "Cadastrar "+ TempData["TipoPessoa"];
+}
+<style>
+    .tipo {
+        margin-bottom: 10px;
+    }
+</style>
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model=> model.PES_TIP)
+
+        <div class="col-md-12">
+            <h3><i class="fa fa-file-o"></i>&nbsp;Cadastrar @TempData["TipoPessoa"]</h3>
+            <div class="tipo col-md-pull-2">
+                <label>Tipo de @TempData["TipoPessoa"]</label>
+                @Html.DropDownListFor(model => model.PES_TIP_FJ, new SelectList(ViewBag.ListaTipoPessoa, "Key", "Value", "S"), new { @class = "form-control" })
+
+            </div>
+            <div id="pnl_pesfis" class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h4>Dados Pessoa Física</h4>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="col-md-8">
+                            <label>Nome</label> 
+                            <input type="text" id="PES_NOM" name="PES_NOM" class="form-control" required placeholder="Preencher campo obrigatório" />
+                        </div>
+                        <div class="col-md-4">
+                            <label>Como gostaria de ser chamado</label>
+                            <input type="text" id="PES_CHA" name="PES_CHA" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <label>CPF</label>
+                            <input type="text" id="PES_CPF_CNP" name="PES_CPF_CNP" class="form-control" required placeholder="Preencher campo obrigatório" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>RG</label>
+                            <input type="text" id="PES_RG" name="PES_RG" class="form-control" required placeholder="Preencher campo obrigatório" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Data Nascimento</label>
+                            <input type="date" id="PES_DAT_NAS" name="PES_DAT_NAS" class="form-control" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Sexo</label>
+                            @*@Html.Label("Sexo", htmlAttributes: new { @class = "control-label col-md-2" })*@
+                            @*@Html.HiddenFor(model => model.PES_SEX_ISN)*@
+                            @Html.DropDownList("PES_SEX_ISN", new SelectList(ViewBag.ListaSexo, "Value", "Text", -1), new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-3">
+                            <label>Estado Civil</label>
+                            @*@Html.HiddenFor(model => model.PES_ESC_ISN)*@
+                            @Html.DropDownList("PES_ESC_ISN", new SelectList(ViewBag.EstadoCivil, "Value", "Text", 0), new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-3">
+                            <label>Religião</label>
+                            @*@Html.HiddenFor(model => model.PES_REL_ISN)*@
+                            @Html.DropDownList("PES_REL_ISN", new SelectList(ViewBag.Religiao, "Value", "Text", -1), new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-3">
+                            <label>Profissão</label>
+                            @*@Html.HiddenFor(model => model.PES_PRO_ISN)*@
+                            @Html.DropDownList("PES_PRO_ISN", new SelectList(ViewBag.Religiao, "Value", "Text", -1), new { @class = "form-control" })
+                        </div>
+                        <div class="col-md-3">
+                            <label>Email</label>
+                            <input type="text" id="PES_EMA" name="PES_EMA" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <label>Pai</label>
+                            <input type="text" id="PES_NOM_PAI" name="PES_NOM_PAI" class="form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Mãe</label>
+                            <input type="text" id="PES_NOM_MAE" name="PES_NOM_MAE" class="form-control" />
+                        </div>
+                    </div>
+                </div> <!-- FIM panel-body -->
+            </div><!-- FIM panel-pessoa-fisica -->
+
+            <div id="pnl_pesjur" class="panel panel-default" style="display:none">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h4>Dados Pessoa Jurídica</h4>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <label>Empresa/Razão Social</label>
+                            <input type="text" id="PES_CHA" name="PES_CHA" class="form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Nome Fantasia</label>
+                            <input type="text" id="PES_NOM" name="PES_NOM" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-4">
+                            <label>CNPJ</label>
+                            <input type="text" id="PES_CPF_CNP" name="PES_CPF_CNP" class="form-control" />
+                        </div>
+                        <div class="col-md-4">
+                            <label>Insc.Estadual</label>
+                            <input type="text" id="PES_CGF" name="PES_CGF" class="form-control" />
+                        </div>
+                        <div class="col-md-4">
+                            <label>Ramo de Atividade</label>
+                            <input type="text" id="PES_RAM" name="PES_RAM" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pnl_endereco" class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <h4>Dados Endereço</h4>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <div class="col-md-10">
+                            <label>Endereço</label>
+                            <input type="text" id="PES_END" name="PES_END" class="form-control" required placeholder="Preencher campo obrigatório" />
+                        </div>
+                        <div class="col-md-2">
+                            <label>Numero</label>
+                            <input type="text" id="PES_END_NUM" name="PES_END_NUM" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <label>Complemento</label>
+                            <input type="text" id="PES_END_COM" name="PES_END_COM" class="form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <label>Bairro</label>
+                            <input type="text" id="PES_BAI_NF" name="PES_BAI_NF" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <label>Cidade</label>
+                            <input type="text" id="PES_CID_NF" name="PES_CID_NF" class="form-control" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Uf</label>
+                            <input type="text" id="PES_UF_NF" name="PES_UF_NF" class="form-control" />
+                        </div>
+                        <div class="col-md-3">
+                            <label>Cep</label>
+                            <input type="text" id="PES_CEP" name="PES_CEP" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-12">
+                            <label>Observação</label>
+                            <input type="text" id="PES_OBS" name="PES_OBS" class="form-control" />
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="col-md-12">
+        <button id="btngravar" type="submit" class="btn btn-success"><i class="fa fa-check"></i>&nbsp;Gravar</button>
+        @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-default" })
+    </div>
+}
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        <script>
+            $().ready(function () {
+                $("#PES_TIP_FJ").val("F");
+                validar("PES_NOM", "Preecher um nome válido...");
+                frmcpfcnpj("PES_CPF_CNP");
+                
+                
+                $("form").submit(function (e) {
+                    validar_select('PES_PRO_ISN', 'Campo obrigatório');
+                });
+
+                $("#PES_TIP_FJ").change(function () {
+                    if ($("#PES_TIP_FJ").val() == "J") {
+                        $("#pnl_pesjur").show();
+                        $("#pnl_pesfis").hide();
+                    }
+                    else {
+                        $("#pnl_pesjur").hide();
+                        $("#pnl_pesfis").show();
+                    }
+                });
+                $("#btngravar").click(function () {
+
+                });
+
+
+
+            });
+        </script>
+    }
+
+

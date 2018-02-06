@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">@Html.ActionLink("MSP", "Index", "Home")</p>
+            </div>
+            <div class="float-left">
+                @*<section id="login">
+                    @Html.Partial("_LoginPartial")
+                </section>*@
+                <nav>
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-home"></i>&nbsp;Início <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><i class="fa fa-user"></i>&nbsp;Usuários</a></li>
+                                <li><a href="#"><i class="fa fa-gear"></i>&nbsp;Configurações</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-book"></i>&nbsp;Cadastros<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Content("~/Cliente")"><i class="fa fa-group"></i>&nbsp;Clientes</a></li>
+                                @*<li>@Html.ActionLink("Cliente", "Index", "Cliente")</li>
+                                <li>@Html.ActionLink("Enviar Documento", "NovaSenha", "Usuarios")</li>
+        <li>@Html.ActionLink("Documento Recebido", "Index", "Admin")</li>*@
+                                @*<li>@Html.ActionLink("Arquivo", "Index", "Entidade")</li>
+        <li>@Html.ActionLink("Solicitações", "Index", "Localizacao")</li>
+        <li>@Html.ActionLink("Secretarias", "Index", "Lote")</li>*@
+                            </ul>
+                        </li>
+                    </ul>
+                    @*<ul id="menu">
+                        <li>@Html.ActionLink("Cliente", "Index", "Cliente")</li>
+                    </ul>*@
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        <div class="container">
+            <div id="_msg" class="alert alert-success" role="alert" style="display:none;">
+                <i class="glyphicon glyphicon-ok"></i>&nbsp;
+            </div>
+            <div id="_msgatencao" class="alert alert-warning" role="alert" style="display:none;">
+                <i class="glyphicon glyphicon-ok"></i>&nbsp;
+            </div>
+            @if (TempData["Msg"] != null)
+            {
+                <div id="msg" class="alert alert-success" role="alert"><i class="fa fa-check"></i>&nbsp;@TempData["Msg"]</div>
+            }
+            @if (TempData["Erro"] != null)
+            {
+                <div id="erro" class="alert alert-danger" role="alert"><i class="fa fa-warning"></i>&nbsp;@TempData["Erro"]</div>
+            }
+        </div>
+        @RenderBody()
+        @*@RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>*@
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - MSP Desenvolvimento by LB</p>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<script>
+    $().ready(function () {
+        $("#msg").slideUp(1000);
+    });
+</script>
+

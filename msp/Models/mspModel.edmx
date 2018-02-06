@@ -1,0 +1,813 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BANCOMSPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BANCOMSP.dbo.ESTADOCIVIL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ESTADOCIVIL">
+          <Key>
+            <PropertyRef Name="ESC_ISN" />
+          </Key>
+          <Property Name="ESC_ISN" Type="int" Nullable="false" />
+          <Property Name="ESC_DSC" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PESSOA">
+          <Key>
+            <PropertyRef Name="PES_ISN" />
+          </Key>
+          <Property Name="PES_ISN" Type="int" Nullable="false" />
+          <Property Name="PES_FOT" Type="image" />
+          <Property Name="PES_NOM" Type="varchar" MaxLength="200" />
+          <Property Name="PES_CHA" Type="varchar" MaxLength="100" />
+          <Property Name="PES_CON" Type="varchar" MaxLength="100" />
+          <Property Name="PES_RAM" Type="varchar" MaxLength="100" />
+          <Property Name="PES_SEX_ISN" Type="int" />
+          <Property Name="PES_PRO_ISN" Type="int" />
+          <Property Name="PES_DAT" Type="datetime" />
+          <Property Name="PES_DAT_NAS" Type="datetime" />
+          <Property Name="PES_IDA" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="PES_END" Type="varchar" MaxLength="200" />
+          <Property Name="PES_END_COB" Type="varchar" MaxLength="200" />
+          <Property Name="PES_END_NUM" Type="char" MaxLength="10" />
+          <Property Name="PES_END_COM" Type="varchar" MaxLength="200" />
+          <Property Name="PES_PR" Type="varchar" MaxLength="100" />
+          <Property Name="PES_EST_ISN" Type="int" />
+          <Property Name="PES_BAI_NF" Type="varchar" MaxLength="100" />
+          <Property Name="PES_CID_NF" Type="char" MaxLength="100" />
+          <Property Name="PES_UF_NF" Type="char" MaxLength="2" />
+          <Property Name="PES_DDD" Type="char" MaxLength="4" />
+          <Property Name="PES_CID_ISN" Type="int" />
+          <Property Name="PES_BAI_ISN" Type="int" />
+          <Property Name="PES_CEP" Type="varchar" MaxLength="20" />
+          <Property Name="PES_FON_FIX" Type="varchar" MaxLength="50" />
+          <Property Name="PES_FON_CEL" Type="varchar" MaxLength="50" />
+          <Property Name="PES_FON_FAX" Type="varchar" MaxLength="50" />
+          <Property Name="PES_FON_OBS" Type="varchar" MaxLength="50" />
+          <Property Name="PES_EMA" Type="varchar" MaxLength="150" />
+          <Property Name="PES_TIP" Type="char" MaxLength="3" />
+          <Property Name="PES_SEN" Type="varchar" MaxLength="20" />
+          <Property Name="PES_USU" Type="char" MaxLength="1" />
+          <Property Name="PES_OBS" Type="varchar" MaxLength="500" />
+          <Property Name="PES_RG" Type="varchar" MaxLength="20" />
+          <Property Name="PES_DOC_ORI" Type="char" MaxLength="6" />
+          <Property Name="PES_DOC_ORI_UF" Type="char" MaxLength="2" />
+          <Property Name="PES_DOC_DAT" Type="datetime" />
+          <Property Name="PES_TIP_FJ" Type="char" MaxLength="1" />
+          <Property Name="PES_CPF_CNP" Type="varchar" MaxLength="20" />
+          <Property Name="PES_CGF" Type="char" MaxLength="14" />
+          <Property Name="PES_INS_MUN" Type="char" MaxLength="14" />
+          <Property Name="PES_NOM_PAI" Type="varchar" MaxLength="100" />
+          <Property Name="PES_NOM_MAE" Type="varchar" MaxLength="100" />
+          <Property Name="PES_PGP_ISN" Type="int" />
+          <Property Name="PES_REL_ISN" Type="int" />
+          <Property Name="PES_ESC_ISN" Type="int" />
+          <Property Name="PES_REC_ISN" Type="int" />
+          <Property Name="PES_USU_ISN" Type="int" />
+          <Property Name="PES_GED_1" Type="varchar" MaxLength="500" />
+          <Property Name="PES_GED_2" Type="varchar" MaxLength="500" />
+          <Property Name="PES_GED_3" Type="varchar" MaxLength="500" />
+          <Property Name="PES_GED_4" Type="varchar" MaxLength="500" />
+          <Property Name="PES_GED_5" Type="varchar" MaxLength="500" />
+          <Property Name="PES_COD_INT" Type="varchar" MaxLength="12" />
+          <Property Name="PES_PLA_ISN" Type="int" />
+          <Property Name="PES_DAV" Type="int" />
+          <Property Name="PES_CSN" Type="char" MaxLength="3" />
+          <Property Name="PES_LGT_ISN" Type="int" />
+          <Property Name="PES_LGD_ISN" Type="int" />
+          <Property Name="PES_DAT_FAL" Type="datetime" />
+          <Property Name="PES_FON_EXT" Type="varchar" MaxLength="16" />
+          <Property Name="PES_DAT_ADM" Type="datetime" />
+          <Property Name="PES_FAL" Type="char" MaxLength="3" />
+          <Property Name="PES_CLT_ISN" Type="int" />
+          <Property Name="PES_VND_ISN" Type="int" />
+          <Property Name="PES_DAT_CAR" Type="datetime" />
+          <Property Name="PES_ATV" Type="char" MaxLength="3" />
+          <Property Name="PES_ASS" Type="char" MaxLength="3" />
+          <Property Name="PES_VAL_ATU" Type="money" />
+          <Property Name="PES_VAL_ANT" Type="money" />
+          <Property Name="PES_EXC" Type="char" MaxLength="3" />
+          <Property Name="PES_TRO_TIT_ANT_ISN" Type="int" />
+          <Property Name="PES_TRO_DEP_ISN" Type="int" />
+          <Property Name="PES_DAT_VNC" Type="datetime" />
+          <Property Name="PES_VAL_ADE" Type="money" />
+          <Property Name="PES_DAT_EXC" Type="datetime" />
+          <Property Name="PES_IMA_001" Type="varchar" MaxLength="200" />
+          <Property Name="PES_IMA_002" Type="varchar" MaxLength="200" />
+          <Property Name="PES_IMA_003" Type="varchar" MaxLength="200" />
+          <Property Name="PES_IMA_004" Type="varchar" MaxLength="200" />
+          <Property Name="PES_IMA_005" Type="varchar" MaxLength="200" />
+          <Property Name="PES_REP_ISN" Type="int" />
+          <Property Name="PES_IMA_3X4" Type="varchar" MaxLength="200" />
+          <Property Name="PES_TIT_CLI_ISN" Type="int" />
+          <Property Name="PES_TIP_SEQ" Type="int" />
+          <Property Name="PES_CTT" Type="varchar" MaxLength="100" />
+          <Property Name="PES_DAT_DEM" Type="datetime" />
+          <Property Name="PES_CTP" Type="varchar" MaxLength="30" />
+          <Property Name="PES_FUN" Type="char" MaxLength="1" />
+          <Property Name="PES_PIS" Type="varchar" MaxLength="30" />
+          <Property Name="PES_STS" Type="char" MaxLength="3" />
+          <Property Name="PES_COB_ISN" Type="int" />
+          <Property Name="PES_DAT_CAD" Type="datetime" />
+          <Property Name="PES_MEN_ATU" Type="money" />
+          <Property Name="PES_MEN_ANT" Type="money" />
+          <Property Name="PES_ANF_CIC_PRD" Type="int" />
+          <Property Name="EMP" Type="int" />
+          <Property Name="PES_FIN_BLO" Type="char" MaxLength="3" />
+          <Property Name="PES_FIN_REN_VAL" Type="money" />
+          <Property Name="PES_FIN_LIM_VAL" Type="money" />
+          <Property Name="PES_FIN_LIM_CHE_VAL" Type="money" />
+          <Property Name="PES_FIN_ATR_MAX" Type="int" />
+          <Property Name="PES_FIN_STF_ISN" Type="int" />
+          <Property Name="PES_FIN_SPC" Type="nchar" MaxLength="10" />
+          <Property Name="PLACA_TRA" Type="char" MaxLength="10" />
+          <Property Name="UF_PLACA_TRA" Type="char" MaxLength="2" />
+          <Property Name="PES_DOC" Type="varchar" MaxLength="20" />
+          <Property Name="PES_ID" Type="varchar" MaxLength="100" />
+          <Property Name="PES_REM" Type="char" MaxLength="3" />
+          <Property Name="PES_DEP_ISN" Type="int" />
+          <Property Name="PES_END_COB_BAI" Type="varchar" MaxLength="100" />
+          <Property Name="PES_END_COB_CID" Type="varchar" MaxLength="100" />
+          <Property Name="PES_END_COB_UF" Type="char" MaxLength="2" />
+          <Property Name="PES_END_COB_CEP" Type="varchar" MaxLength="15" />
+          <Property Name="PES_END_COB_FON" Type="varchar" MaxLength="16" />
+          <Property Name="PES_SUB_SEQ_DEP" Type="int" />
+          <Property Name="PES_FIN" Type="char" MaxLength="3" />
+          <Property Name="PES_VEN_ISN" Type="int" />
+          <Property Name="PES_FON_CON" Type="varchar" MaxLength="100" />
+          <Property Name="PES_MAT" Type="char" MaxLength="8" />
+          <Property Name="PES_ORI" Type="char" MaxLength="3" />
+          <Property Name="PES_RAC" Type="varchar" MaxLength="40" />
+          <Property Name="PES_DEF" Type="varchar" MaxLength="100" />
+          <Property Name="PES_CJG" Type="varchar" MaxLength="100" />
+          <Property Name="PES_MOT_EXC_ISN" Type="int" />
+          <Property Name="PES_PLA_ISN_ANT" Type="int" />
+          <Property Name="PES_PLA_MOT_TRO_ISN" Type="int" />
+          <Property Name="PES_PLA_TCO_ISN" Type="int" />
+          <Property Name="PES_PLA_DAT" Type="datetime" />
+          <Property Name="PES_PLA_DAT_CAD" Type="datetime" />
+          <Property Name="PES_PLA_VAL_MES" Type="money" />
+          <Property Name="PES_PLA_VAL_ENT" Type="money" />
+          <Property Name="PES_PLA_QTD_MES" Type="int" />
+          <Property Name="PES_PLA_DIA_VNC" Type="int" />
+          <Property Name="PES_PLA_DIA_CAR" Type="int" />
+          <Property Name="PES_FIS_COD_ICM" Type="int" />
+          <Property Name="PES_FIS_COD_CFO" Type="int" />
+          <Property Name="PES_FIS_INDIEDEST" Type="int" />
+          <Property Name="PES_END_LOG" Type="varchar" MaxLength="50" />
+          <Property Name="PES_CBK_ISN" Type="int" />
+          <Property Name="PES_CBK_FED_ISN" Type="int" />
+          <Property Name="PES_CBK_CLU_ISN" Type="int" />
+          <Property Name="PES_INS_SEFIP" Type="char" MaxLength="2" />
+          <Property Name="PES_INS_CAGED" Type="char" MaxLength="2" />
+          <Property Name="PES_INS_RAIS" Type="int" />
+          <Property Name="PES_RAC_ISN" Type="int" />
+          <Property Name="PES_INS_ISN" Type="int" />
+          <Property Name="PES_BAN_ISN" Type="char" MaxLength="3" />
+          <Property Name="PES_BAN_AGN_ISN" Type="int" />
+          <Property Name="PES_BAN_CC" Type="char" MaxLength="20" />
+          <Property Name="PES_RG_SSP" Type="varchar" MaxLength="200" />
+          <Property Name="PES_RG_DAT" Type="datetime" />
+          <Property Name="PES_RH_CTP_SER" Type="varchar" MaxLength="20" />
+          <Property Name="PES_RH_TIT_ELE" Type="varchar" MaxLength="40" />
+          <Property Name="PES_RH_REB_FOP_ISN" Type="int" />
+          <Property Name="PES_RH_TRN_ISN" Type="int" />
+          <Property Name="PES_CTT_TIP_ISN" Type="int" />
+          <Property Name="PES_VAL_SAL" Type="money" />
+          <Property Name="PES_CTT_EXP_ISN" Type="int" />
+          <Property Name="PES_RH_CBO_ISN" Type="varchar" MaxLength="7" />
+          <Property Name="PES_RH_CID_NAT_ISN" Type="int" />
+          <Property Name="PES_RH_DEP_DOC" Type="char" MaxLength="3" />
+          <Property Name="PES_RH_DEP_DEN" Type="datetime" />
+          <Property Name="PES_RH_DEP_DVA" Type="datetime" />
+          <Property Name="PES_RH_MAT" Type="char" MaxLength="50" />
+          <Property Name="PES_RH_VTT_ISN" Type="int" />
+          <Property Name="PES_RH_DAT_ADM" Type="datetime" />
+          <Property Name="PES_RH_BAN_AGN_ISN" Type="int" />
+          <Property Name="PES_RH_RHT_ISN" Type="int" />
+          <Property Name="PES_RH_RHE_ISN" Type="int" />
+          <Property Name="PES_RH_VAL_ISN" Type="int" />
+          <Property Name="PES_RH_RCT_ISN" Type="int" />
+          <Property Name="PES_RH_RHT_QTD" Type="float" />
+          <Property Name="PES_RH_CTP" Type="varchar" MaxLength="30" />
+          <Property Name="PES_RH_PIS" Type="varchar" MaxLength="30" />
+          <Property Name="PES_RH_DEF" Type="varchar" MaxLength="100" />
+          <Property Name="PES_RH_RAC_ISN" Type="int" />
+          <Property Name="PES_RH_INS_ISN" Type="int" />
+          <Property Name="PES_RH_AGN_ISN" Type="int" />
+          <Property Name="PES_RH_BAN_CC" Type="char" MaxLength="20" />
+          <Property Name="PES_RH_BAN_ISN" Type="char" MaxLength="3" />
+          <Property Name="PES_DEP_STS" Type="char" MaxLength="3" />
+          <Property Name="PES_CBK_CLU_DSC" Type="varchar" MaxLength="200" />
+          <Property Name="PES_FON_LON" Type="varchar" MaxLength="40" />
+          <Property Name="PES_CBK_ID" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_NUM_ANT" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_CER" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_EST" Type="char" MaxLength="40" />
+          <Property Name="PES_CBK_GRA" Type="char" MaxLength="40" />
+          <Property Name="PES_CBK_FAX_BRA" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_FAX_AMA" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_FAX_VER" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_FAX_LAR" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_FAX_VED" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_FAX_ROX" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_FAX_MAR" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_FAX_DAN_1" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_FAX_DAN_2" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_FAX_DAN_3" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_FAX_DAN_4" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_FAX_DAN_5" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_FAX_DAN_6" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_FAX_DAN_7" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_FAX_DAN_8" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_FAX_DAN_9" Type="char" MaxLength="20" />
+          <Property Name="PES_CBK_TRA" Type="char" MaxLength="50" />
+          <Property Name="PES_COM_FIN" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BANCOMSP.dbo.PROFISSAO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PROFISSAO">
+          <Key>
+            <PropertyRef Name="PRO_ISN" />
+          </Key>
+          <Property Name="PRO_ISN" Type="int" Nullable="false" />
+          <Property Name="PRO_NOM" Type="nvarchar" MaxLength="80" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BANCOMSP.dbo.RELIGIAO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="RELIGIAO">
+          <Key>
+            <PropertyRef Name="REL_ISN" />
+          </Key>
+          <Property Name="REL_ISN" Type="int" Nullable="false" />
+          <Property Name="REL_DSC" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BANCOMSP.dbo.SEXO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SEXO">
+          <Key>
+            <PropertyRef Name="SEX_ISN" />
+          </Key>
+          <Property Name="SEX_ISN" Type="int" Nullable="false" />
+          <Property Name="SEX_DSC" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BANCOMSP.dbo.VW_CODPESSOA' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VW_CODPESSOA">
+          <Property Name="CODIGOCLI" Type="int" />
+        </EntityType>-->
+        <EntityContainer Name="BANCOMSPModelStoreContainer">
+          <EntitySet Name="PESSOA" EntityType="Self.PESSOA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ESTADOCIVIL" EntityType="Self.ESTADOCIVIL" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[ESTADOCIVIL].[ESC_ISN] AS [ESC_ISN], 
+[ESTADOCIVIL].[ESC_DSC] AS [ESC_DSC]
+FROM [dbo].[ESTADOCIVIL] AS [ESTADOCIVIL]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PROFISSAO" EntityType="Self.PROFISSAO" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[PROFISSAO].[PRO_ISN] AS [PRO_ISN], 
+[PROFISSAO].[PRO_NOM] AS [PRO_NOM]
+FROM [dbo].[PROFISSAO] AS [PROFISSAO]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RELIGIAO" EntityType="Self.RELIGIAO" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[RELIGIAO].[REL_ISN] AS [REL_ISN], 
+[RELIGIAO].[REL_DSC] AS [REL_DSC]
+FROM [dbo].[RELIGIAO] AS [RELIGIAO]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SEXO" EntityType="Self.SEXO" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[SEXO].[SEX_ISN] AS [SEX_ISN], 
+[SEXO].[SEX_DSC] AS [SEX_DSC]
+FROM [dbo].[SEXO] AS [SEXO]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BANCOMSPModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="ESTADOCIVIL">
+          <Key>
+            <PropertyRef Name="ESC_ISN" />
+          </Key>
+          <Property Name="ESC_ISN" Type="Int32" Nullable="false" />
+          <Property Name="ESC_DSC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PESSOA">
+          <Key>
+            <PropertyRef Name="PES_ISN" />
+          </Key>
+          <Property Name="PES_ISN" Type="Int32" Nullable="false" />
+          <Property Name="PES_FOT" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="PES_NOM" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PES_CHA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PES_CON" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PES_RAM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PES_SEX_ISN" Type="Int32" />
+          <Property Name="PES_PRO_ISN" Type="Int32" />
+          <Property Name="PES_DAT" Type="DateTime" Precision="3" />
+          <Property Name="PES_DAT_NAS" Type="DateTime" Precision="3" />
+          <Property Name="PES_IDA" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PES_END" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PES_END_COB" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PES_END_NUM" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="PES_END_COM" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PES_PR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PES_EST_ISN" Type="Int32" />
+          <Property Name="PES_BAI_NF" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PES_CID_NF" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="PES_UF_NF" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="PES_DDD" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CID_ISN" Type="Int32" />
+          <Property Name="PES_BAI_ISN" Type="Int32" />
+          <Property Name="PES_CEP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PES_FON_FIX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PES_FON_CEL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PES_FON_FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PES_FON_OBS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PES_EMA" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="PES_TIP" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PES_SEN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PES_USU" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PES_OBS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PES_RG" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PES_DOC_ORI" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="PES_DOC_ORI_UF" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="PES_DOC_DAT" Type="DateTime" Precision="3" />
+          <Property Name="PES_TIP_FJ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CPF_CNP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PES_CGF" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+          <Property Name="PES_INS_MUN" Type="String" MaxLength="14" FixedLength="true" Unicode="false" />
+          <Property Name="PES_NOM_PAI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PES_NOM_MAE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PES_PGP_ISN" Type="Int32" />
+          <Property Name="PES_REL_ISN" Type="Int32" />
+          <Property Name="PES_ESC_ISN" Type="Int32" />
+          <Property Name="PES_REC_ISN" Type="Int32" />
+          <Property Name="PES_USU_ISN" Type="Int32" />
+          <Property Name="PES_GED_1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PES_GED_2" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PES_GED_3" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PES_GED_4" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PES_GED_5" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="PES_COD_INT" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="PES_PLA_ISN" Type="Int32" />
+          <Property Name="PES_DAV" Type="Int32" />
+          <Property Name="PES_CSN" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PES_LGT_ISN" Type="Int32" />
+          <Property Name="PES_LGD_ISN" Type="Int32" />
+          <Property Name="PES_DAT_FAL" Type="DateTime" Precision="3" />
+          <Property Name="PES_FON_EXT" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="PES_DAT_ADM" Type="DateTime" Precision="3" />
+          <Property Name="PES_FAL" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CLT_ISN" Type="Int32" />
+          <Property Name="PES_VND_ISN" Type="Int32" />
+          <Property Name="PES_DAT_CAR" Type="DateTime" Precision="3" />
+          <Property Name="PES_ATV" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PES_ASS" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PES_VAL_ATU" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PES_VAL_ANT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PES_EXC" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PES_TRO_TIT_ANT_ISN" Type="Int32" />
+          <Property Name="PES_TRO_DEP_ISN" Type="Int32" />
+          <Property Name="PES_DAT_VNC" Type="DateTime" Precision="3" />
+          <Property Name="PES_VAL_ADE" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PES_DAT_EXC" Type="DateTime" Precision="3" />
+          <Property Name="PES_IMA_001" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PES_IMA_002" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PES_IMA_003" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PES_IMA_004" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PES_IMA_005" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PES_REP_ISN" Type="Int32" />
+          <Property Name="PES_IMA_3X4" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PES_TIT_CLI_ISN" Type="Int32" />
+          <Property Name="PES_TIP_SEQ" Type="Int32" />
+          <Property Name="PES_CTT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PES_DAT_DEM" Type="DateTime" Precision="3" />
+          <Property Name="PES_CTP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PES_FUN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PES_PIS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PES_STS" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PES_COB_ISN" Type="Int32" />
+          <Property Name="PES_DAT_CAD" Type="DateTime" Precision="3" />
+          <Property Name="PES_MEN_ATU" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PES_MEN_ANT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PES_ANF_CIC_PRD" Type="Int32" />
+          <Property Name="EMP" Type="Int32" />
+          <Property Name="PES_FIN_BLO" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PES_FIN_REN_VAL" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PES_FIN_LIM_VAL" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PES_FIN_LIM_CHE_VAL" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PES_FIN_ATR_MAX" Type="Int32" />
+          <Property Name="PES_FIN_STF_ISN" Type="Int32" />
+          <Property Name="PES_FIN_SPC" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PLACA_TRA" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="UF_PLACA_TRA" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="PES_DOC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PES_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PES_REM" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PES_DEP_ISN" Type="Int32" />
+          <Property Name="PES_END_COB_BAI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PES_END_COB_CID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PES_END_COB_UF" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="PES_END_COB_CEP" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="PES_END_COB_FON" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="PES_SUB_SEQ_DEP" Type="Int32" />
+          <Property Name="PES_FIN" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PES_VEN_ISN" Type="Int32" />
+          <Property Name="PES_FON_CON" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PES_MAT" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="PES_ORI" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PES_RAC" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="PES_DEF" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PES_CJG" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PES_MOT_EXC_ISN" Type="Int32" />
+          <Property Name="PES_PLA_ISN_ANT" Type="Int32" />
+          <Property Name="PES_PLA_MOT_TRO_ISN" Type="Int32" />
+          <Property Name="PES_PLA_TCO_ISN" Type="Int32" />
+          <Property Name="PES_PLA_DAT" Type="DateTime" Precision="3" />
+          <Property Name="PES_PLA_DAT_CAD" Type="DateTime" Precision="3" />
+          <Property Name="PES_PLA_VAL_MES" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PES_PLA_VAL_ENT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PES_PLA_QTD_MES" Type="Int32" />
+          <Property Name="PES_PLA_DIA_VNC" Type="Int32" />
+          <Property Name="PES_PLA_DIA_CAR" Type="Int32" />
+          <Property Name="PES_FIS_COD_ICM" Type="Int32" />
+          <Property Name="PES_FIS_COD_CFO" Type="Int32" />
+          <Property Name="PES_FIS_INDIEDEST" Type="Int32" />
+          <Property Name="PES_END_LOG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PES_CBK_ISN" Type="Int32" />
+          <Property Name="PES_CBK_FED_ISN" Type="Int32" />
+          <Property Name="PES_CBK_CLU_ISN" Type="Int32" />
+          <Property Name="PES_INS_SEFIP" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="PES_INS_CAGED" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="PES_INS_RAIS" Type="Int32" />
+          <Property Name="PES_RAC_ISN" Type="Int32" />
+          <Property Name="PES_INS_ISN" Type="Int32" />
+          <Property Name="PES_BAN_ISN" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PES_BAN_AGN_ISN" Type="Int32" />
+          <Property Name="PES_BAN_CC" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_RG_SSP" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PES_RG_DAT" Type="DateTime" Precision="3" />
+          <Property Name="PES_RH_CTP_SER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PES_RH_TIT_ELE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="PES_RH_REB_FOP_ISN" Type="Int32" />
+          <Property Name="PES_RH_TRN_ISN" Type="Int32" />
+          <Property Name="PES_CTT_TIP_ISN" Type="Int32" />
+          <Property Name="PES_VAL_SAL" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PES_CTT_EXP_ISN" Type="Int32" />
+          <Property Name="PES_RH_CBO_ISN" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="PES_RH_CID_NAT_ISN" Type="Int32" />
+          <Property Name="PES_RH_DEP_DOC" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PES_RH_DEP_DEN" Type="DateTime" Precision="3" />
+          <Property Name="PES_RH_DEP_DVA" Type="DateTime" Precision="3" />
+          <Property Name="PES_RH_MAT" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="PES_RH_VTT_ISN" Type="Int32" />
+          <Property Name="PES_RH_DAT_ADM" Type="DateTime" Precision="3" />
+          <Property Name="PES_RH_BAN_AGN_ISN" Type="Int32" />
+          <Property Name="PES_RH_RHT_ISN" Type="Int32" />
+          <Property Name="PES_RH_RHE_ISN" Type="Int32" />
+          <Property Name="PES_RH_VAL_ISN" Type="Int32" />
+          <Property Name="PES_RH_RCT_ISN" Type="Int32" />
+          <Property Name="PES_RH_RHT_QTD" Type="Double" />
+          <Property Name="PES_RH_CTP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PES_RH_PIS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PES_RH_DEF" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PES_RH_RAC_ISN" Type="Int32" />
+          <Property Name="PES_RH_INS_ISN" Type="Int32" />
+          <Property Name="PES_RH_AGN_ISN" Type="Int32" />
+          <Property Name="PES_RH_BAN_CC" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_RH_BAN_ISN" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PES_DEP_STS" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_CLU_DSC" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PES_FON_LON" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="PES_CBK_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_NUM_ANT" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_CER" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_EST" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_GRA" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_BRA" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_AMA" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_VER" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_LAR" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_VED" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_ROX" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_MAR" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_DAN_1" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_DAN_2" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_DAN_3" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_DAN_4" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_DAN_5" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_DAN_6" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_DAN_7" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_DAN_8" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_FAX_DAN_9" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="PES_CBK_TRA" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="PES_COM_FIN" Type="Double" />
+        </EntityType>
+        <EntityType Name="PROFISSAO">
+          <Key>
+            <PropertyRef Name="PRO_ISN" />
+          </Key>
+          <Property Name="PRO_ISN" Type="Int32" Nullable="false" />
+          <Property Name="PRO_NOM" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RELIGIAO">
+          <Key>
+            <PropertyRef Name="REL_ISN" />
+          </Key>
+          <Property Name="REL_ISN" Type="Int32" Nullable="false" />
+          <Property Name="REL_DSC" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SEXO">
+          <Key>
+            <PropertyRef Name="SEX_ISN" />
+          </Key>
+          <Property Name="SEX_ISN" Type="Int32" Nullable="false" />
+          <Property Name="SEX_DSC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="BANCOMSPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ESTADOCIVIL" EntityType="Self.ESTADOCIVIL" />
+          <EntitySet Name="PESSOA" EntityType="Self.PESSOA" />
+          <EntitySet Name="PROFISSAO" EntityType="Self.PROFISSAO" />
+          <EntitySet Name="RELIGIAO" EntityType="Self.RELIGIAO" />
+          <EntitySet Name="SEXO" EntityType="Self.SEXO" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BANCOMSPModelStoreContainer" CdmEntityContainer="BANCOMSPEntities">
+          <EntitySetMapping Name="ESTADOCIVIL">
+            <EntityTypeMapping TypeName="BANCOMSPModel.ESTADOCIVIL">
+              <MappingFragment StoreEntitySet="ESTADOCIVIL">
+                <ScalarProperty Name="ESC_ISN" ColumnName="ESC_ISN" />
+                <ScalarProperty Name="ESC_DSC" ColumnName="ESC_DSC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PESSOA">
+            <EntityTypeMapping TypeName="BANCOMSPModel.PESSOA">
+              <MappingFragment StoreEntitySet="PESSOA">
+                <ScalarProperty Name="PES_ISN" ColumnName="PES_ISN" />
+                <ScalarProperty Name="PES_FOT" ColumnName="PES_FOT" />
+                <ScalarProperty Name="PES_NOM" ColumnName="PES_NOM" />
+                <ScalarProperty Name="PES_CHA" ColumnName="PES_CHA" />
+                <ScalarProperty Name="PES_CON" ColumnName="PES_CON" />
+                <ScalarProperty Name="PES_RAM" ColumnName="PES_RAM" />
+                <ScalarProperty Name="PES_SEX_ISN" ColumnName="PES_SEX_ISN" />
+                <ScalarProperty Name="PES_PRO_ISN" ColumnName="PES_PRO_ISN" />
+                <ScalarProperty Name="PES_DAT" ColumnName="PES_DAT" />
+                <ScalarProperty Name="PES_DAT_NAS" ColumnName="PES_DAT_NAS" />
+                <ScalarProperty Name="PES_IDA" ColumnName="PES_IDA" />
+                <ScalarProperty Name="PES_END" ColumnName="PES_END" />
+                <ScalarProperty Name="PES_END_COB" ColumnName="PES_END_COB" />
+                <ScalarProperty Name="PES_END_NUM" ColumnName="PES_END_NUM" />
+                <ScalarProperty Name="PES_END_COM" ColumnName="PES_END_COM" />
+                <ScalarProperty Name="PES_PR" ColumnName="PES_PR" />
+                <ScalarProperty Name="PES_EST_ISN" ColumnName="PES_EST_ISN" />
+                <ScalarProperty Name="PES_BAI_NF" ColumnName="PES_BAI_NF" />
+                <ScalarProperty Name="PES_CID_NF" ColumnName="PES_CID_NF" />
+                <ScalarProperty Name="PES_UF_NF" ColumnName="PES_UF_NF" />
+                <ScalarProperty Name="PES_DDD" ColumnName="PES_DDD" />
+                <ScalarProperty Name="PES_CID_ISN" ColumnName="PES_CID_ISN" />
+                <ScalarProperty Name="PES_BAI_ISN" ColumnName="PES_BAI_ISN" />
+                <ScalarProperty Name="PES_CEP" ColumnName="PES_CEP" />
+                <ScalarProperty Name="PES_FON_FIX" ColumnName="PES_FON_FIX" />
+                <ScalarProperty Name="PES_FON_CEL" ColumnName="PES_FON_CEL" />
+                <ScalarProperty Name="PES_FON_FAX" ColumnName="PES_FON_FAX" />
+                <ScalarProperty Name="PES_FON_OBS" ColumnName="PES_FON_OBS" />
+                <ScalarProperty Name="PES_EMA" ColumnName="PES_EMA" />
+                <ScalarProperty Name="PES_TIP" ColumnName="PES_TIP" />
+                <ScalarProperty Name="PES_SEN" ColumnName="PES_SEN" />
+                <ScalarProperty Name="PES_USU" ColumnName="PES_USU" />
+                <ScalarProperty Name="PES_OBS" ColumnName="PES_OBS" />
+                <ScalarProperty Name="PES_RG" ColumnName="PES_RG" />
+                <ScalarProperty Name="PES_DOC_ORI" ColumnName="PES_DOC_ORI" />
+                <ScalarProperty Name="PES_DOC_ORI_UF" ColumnName="PES_DOC_ORI_UF" />
+                <ScalarProperty Name="PES_DOC_DAT" ColumnName="PES_DOC_DAT" />
+                <ScalarProperty Name="PES_TIP_FJ" ColumnName="PES_TIP_FJ" />
+                <ScalarProperty Name="PES_CPF_CNP" ColumnName="PES_CPF_CNP" />
+                <ScalarProperty Name="PES_CGF" ColumnName="PES_CGF" />
+                <ScalarProperty Name="PES_INS_MUN" ColumnName="PES_INS_MUN" />
+                <ScalarProperty Name="PES_NOM_PAI" ColumnName="PES_NOM_PAI" />
+                <ScalarProperty Name="PES_NOM_MAE" ColumnName="PES_NOM_MAE" />
+                <ScalarProperty Name="PES_PGP_ISN" ColumnName="PES_PGP_ISN" />
+                <ScalarProperty Name="PES_REL_ISN" ColumnName="PES_REL_ISN" />
+                <ScalarProperty Name="PES_ESC_ISN" ColumnName="PES_ESC_ISN" />
+                <ScalarProperty Name="PES_REC_ISN" ColumnName="PES_REC_ISN" />
+                <ScalarProperty Name="PES_USU_ISN" ColumnName="PES_USU_ISN" />
+                <ScalarProperty Name="PES_GED_1" ColumnName="PES_GED_1" />
+                <ScalarProperty Name="PES_GED_2" ColumnName="PES_GED_2" />
+                <ScalarProperty Name="PES_GED_3" ColumnName="PES_GED_3" />
+                <ScalarProperty Name="PES_GED_4" ColumnName="PES_GED_4" />
+                <ScalarProperty Name="PES_GED_5" ColumnName="PES_GED_5" />
+                <ScalarProperty Name="PES_COD_INT" ColumnName="PES_COD_INT" />
+                <ScalarProperty Name="PES_PLA_ISN" ColumnName="PES_PLA_ISN" />
+                <ScalarProperty Name="PES_DAV" ColumnName="PES_DAV" />
+                <ScalarProperty Name="PES_CSN" ColumnName="PES_CSN" />
+                <ScalarProperty Name="PES_LGT_ISN" ColumnName="PES_LGT_ISN" />
+                <ScalarProperty Name="PES_LGD_ISN" ColumnName="PES_LGD_ISN" />
+                <ScalarProperty Name="PES_DAT_FAL" ColumnName="PES_DAT_FAL" />
+                <ScalarProperty Name="PES_FON_EXT" ColumnName="PES_FON_EXT" />
+                <ScalarProperty Name="PES_DAT_ADM" ColumnName="PES_DAT_ADM" />
+                <ScalarProperty Name="PES_FAL" ColumnName="PES_FAL" />
+                <ScalarProperty Name="PES_CLT_ISN" ColumnName="PES_CLT_ISN" />
+                <ScalarProperty Name="PES_VND_ISN" ColumnName="PES_VND_ISN" />
+                <ScalarProperty Name="PES_DAT_CAR" ColumnName="PES_DAT_CAR" />
+                <ScalarProperty Name="PES_ATV" ColumnName="PES_ATV" />
+                <ScalarProperty Name="PES_ASS" ColumnName="PES_ASS" />
+                <ScalarProperty Name="PES_VAL_ATU" ColumnName="PES_VAL_ATU" />
+                <ScalarProperty Name="PES_VAL_ANT" ColumnName="PES_VAL_ANT" />
+                <ScalarProperty Name="PES_EXC" ColumnName="PES_EXC" />
+                <ScalarProperty Name="PES_TRO_TIT_ANT_ISN" ColumnName="PES_TRO_TIT_ANT_ISN" />
+                <ScalarProperty Name="PES_TRO_DEP_ISN" ColumnName="PES_TRO_DEP_ISN" />
+                <ScalarProperty Name="PES_DAT_VNC" ColumnName="PES_DAT_VNC" />
+                <ScalarProperty Name="PES_VAL_ADE" ColumnName="PES_VAL_ADE" />
+                <ScalarProperty Name="PES_DAT_EXC" ColumnName="PES_DAT_EXC" />
+                <ScalarProperty Name="PES_IMA_001" ColumnName="PES_IMA_001" />
+                <ScalarProperty Name="PES_IMA_002" ColumnName="PES_IMA_002" />
+                <ScalarProperty Name="PES_IMA_003" ColumnName="PES_IMA_003" />
+                <ScalarProperty Name="PES_IMA_004" ColumnName="PES_IMA_004" />
+                <ScalarProperty Name="PES_IMA_005" ColumnName="PES_IMA_005" />
+                <ScalarProperty Name="PES_REP_ISN" ColumnName="PES_REP_ISN" />
+                <ScalarProperty Name="PES_IMA_3X4" ColumnName="PES_IMA_3X4" />
+                <ScalarProperty Name="PES_TIT_CLI_ISN" ColumnName="PES_TIT_CLI_ISN" />
+                <ScalarProperty Name="PES_TIP_SEQ" ColumnName="PES_TIP_SEQ" />
+                <ScalarProperty Name="PES_CTT" ColumnName="PES_CTT" />
+                <ScalarProperty Name="PES_DAT_DEM" ColumnName="PES_DAT_DEM" />
+                <ScalarProperty Name="PES_CTP" ColumnName="PES_CTP" />
+                <ScalarProperty Name="PES_FUN" ColumnName="PES_FUN" />
+                <ScalarProperty Name="PES_PIS" ColumnName="PES_PIS" />
+                <ScalarProperty Name="PES_STS" ColumnName="PES_STS" />
+                <ScalarProperty Name="PES_COB_ISN" ColumnName="PES_COB_ISN" />
+                <ScalarProperty Name="PES_DAT_CAD" ColumnName="PES_DAT_CAD" />
+                <ScalarProperty Name="PES_MEN_ATU" ColumnName="PES_MEN_ATU" />
+                <ScalarProperty Name="PES_MEN_ANT" ColumnName="PES_MEN_ANT" />
+                <ScalarProperty Name="PES_ANF_CIC_PRD" ColumnName="PES_ANF_CIC_PRD" />
+                <ScalarProperty Name="EMP" ColumnName="EMP" />
+                <ScalarProperty Name="PES_FIN_BLO" ColumnName="PES_FIN_BLO" />
+                <ScalarProperty Name="PES_FIN_REN_VAL" ColumnName="PES_FIN_REN_VAL" />
+                <ScalarProperty Name="PES_FIN_LIM_VAL" ColumnName="PES_FIN_LIM_VAL" />
+                <ScalarProperty Name="PES_FIN_LIM_CHE_VAL" ColumnName="PES_FIN_LIM_CHE_VAL" />
+                <ScalarProperty Name="PES_FIN_ATR_MAX" ColumnName="PES_FIN_ATR_MAX" />
+                <ScalarProperty Name="PES_FIN_STF_ISN" ColumnName="PES_FIN_STF_ISN" />
+                <ScalarProperty Name="PES_FIN_SPC" ColumnName="PES_FIN_SPC" />
+                <ScalarProperty Name="PLACA_TRA" ColumnName="PLACA_TRA" />
+                <ScalarProperty Name="UF_PLACA_TRA" ColumnName="UF_PLACA_TRA" />
+                <ScalarProperty Name="PES_DOC" ColumnName="PES_DOC" />
+                <ScalarProperty Name="PES_ID" ColumnName="PES_ID" />
+                <ScalarProperty Name="PES_REM" ColumnName="PES_REM" />
+                <ScalarProperty Name="PES_DEP_ISN" ColumnName="PES_DEP_ISN" />
+                <ScalarProperty Name="PES_END_COB_BAI" ColumnName="PES_END_COB_BAI" />
+                <ScalarProperty Name="PES_END_COB_CID" ColumnName="PES_END_COB_CID" />
+                <ScalarProperty Name="PES_END_COB_UF" ColumnName="PES_END_COB_UF" />
+                <ScalarProperty Name="PES_END_COB_CEP" ColumnName="PES_END_COB_CEP" />
+                <ScalarProperty Name="PES_END_COB_FON" ColumnName="PES_END_COB_FON" />
+                <ScalarProperty Name="PES_SUB_SEQ_DEP" ColumnName="PES_SUB_SEQ_DEP" />
+                <ScalarProperty Name="PES_FIN" ColumnName="PES_FIN" />
+                <ScalarProperty Name="PES_VEN_ISN" ColumnName="PES_VEN_ISN" />
+                <ScalarProperty Name="PES_FON_CON" ColumnName="PES_FON_CON" />
+                <ScalarProperty Name="PES_MAT" ColumnName="PES_MAT" />
+                <ScalarProperty Name="PES_ORI" ColumnName="PES_ORI" />
+                <ScalarProperty Name="PES_RAC" ColumnName="PES_RAC" />
+                <ScalarProperty Name="PES_DEF" ColumnName="PES_DEF" />
+                <ScalarProperty Name="PES_CJG" ColumnName="PES_CJG" />
+                <ScalarProperty Name="PES_MOT_EXC_ISN" ColumnName="PES_MOT_EXC_ISN" />
+                <ScalarProperty Name="PES_PLA_ISN_ANT" ColumnName="PES_PLA_ISN_ANT" />
+                <ScalarProperty Name="PES_PLA_MOT_TRO_ISN" ColumnName="PES_PLA_MOT_TRO_ISN" />
+                <ScalarProperty Name="PES_PLA_TCO_ISN" ColumnName="PES_PLA_TCO_ISN" />
+                <ScalarProperty Name="PES_PLA_DAT" ColumnName="PES_PLA_DAT" />
+                <ScalarProperty Name="PES_PLA_DAT_CAD" ColumnName="PES_PLA_DAT_CAD" />
+                <ScalarProperty Name="PES_PLA_VAL_MES" ColumnName="PES_PLA_VAL_MES" />
+                <ScalarProperty Name="PES_PLA_VAL_ENT" ColumnName="PES_PLA_VAL_ENT" />
+                <ScalarProperty Name="PES_PLA_QTD_MES" ColumnName="PES_PLA_QTD_MES" />
+                <ScalarProperty Name="PES_PLA_DIA_VNC" ColumnName="PES_PLA_DIA_VNC" />
+                <ScalarProperty Name="PES_PLA_DIA_CAR" ColumnName="PES_PLA_DIA_CAR" />
+                <ScalarProperty Name="PES_FIS_COD_ICM" ColumnName="PES_FIS_COD_ICM" />
+                <ScalarProperty Name="PES_FIS_COD_CFO" ColumnName="PES_FIS_COD_CFO" />
+                <ScalarProperty Name="PES_FIS_INDIEDEST" ColumnName="PES_FIS_INDIEDEST" />
+                <ScalarProperty Name="PES_END_LOG" ColumnName="PES_END_LOG" />
+                <ScalarProperty Name="PES_CBK_ISN" ColumnName="PES_CBK_ISN" />
+                <ScalarProperty Name="PES_CBK_FED_ISN" ColumnName="PES_CBK_FED_ISN" />
+                <ScalarProperty Name="PES_CBK_CLU_ISN" ColumnName="PES_CBK_CLU_ISN" />
+                <ScalarProperty Name="PES_INS_SEFIP" ColumnName="PES_INS_SEFIP" />
+                <ScalarProperty Name="PES_INS_CAGED" ColumnName="PES_INS_CAGED" />
+                <ScalarProperty Name="PES_INS_RAIS" ColumnName="PES_INS_RAIS" />
+                <ScalarProperty Name="PES_RAC_ISN" ColumnName="PES_RAC_ISN" />
+                <ScalarProperty Name="PES_INS_ISN" ColumnName="PES_INS_ISN" />
+                <ScalarProperty Name="PES_BAN_ISN" ColumnName="PES_BAN_ISN" />
+                <ScalarProperty Name="PES_BAN_AGN_ISN" ColumnName="PES_BAN_AGN_ISN" />
+                <ScalarProperty Name="PES_BAN_CC" ColumnName="PES_BAN_CC" />
+                <ScalarProperty Name="PES_RG_SSP" ColumnName="PES_RG_SSP" />
+                <ScalarProperty Name="PES_RG_DAT" ColumnName="PES_RG_DAT" />
+                <ScalarProperty Name="PES_RH_CTP_SER" ColumnName="PES_RH_CTP_SER" />
+                <ScalarProperty Name="PES_RH_TIT_ELE" ColumnName="PES_RH_TIT_ELE" />
+                <ScalarProperty Name="PES_RH_REB_FOP_ISN" ColumnName="PES_RH_REB_FOP_ISN" />
+                <ScalarProperty Name="PES_RH_TRN_ISN" ColumnName="PES_RH_TRN_ISN" />
+                <ScalarProperty Name="PES_CTT_TIP_ISN" ColumnName="PES_CTT_TIP_ISN" />
+                <ScalarProperty Name="PES_VAL_SAL" ColumnName="PES_VAL_SAL" />
+                <ScalarProperty Name="PES_CTT_EXP_ISN" ColumnName="PES_CTT_EXP_ISN" />
+                <ScalarProperty Name="PES_RH_CBO_ISN" ColumnName="PES_RH_CBO_ISN" />
+                <ScalarProperty Name="PES_RH_CID_NAT_ISN" ColumnName="PES_RH_CID_NAT_ISN" />
+                <ScalarProperty Name="PES_RH_DEP_DOC" ColumnName="PES_RH_DEP_DOC" />
+                <ScalarProperty Name="PES_RH_DEP_DEN" ColumnName="PES_RH_DEP_DEN" />
+                <ScalarProperty Name="PES_RH_DEP_DVA" ColumnName="PES_RH_DEP_DVA" />
+                <ScalarProperty Name="PES_RH_MAT" ColumnName="PES_RH_MAT" />
+                <ScalarProperty Name="PES_RH_VTT_ISN" ColumnName="PES_RH_VTT_ISN" />
+                <ScalarProperty Name="PES_RH_DAT_ADM" ColumnName="PES_RH_DAT_ADM" />
+                <ScalarProperty Name="PES_RH_BAN_AGN_ISN" ColumnName="PES_RH_BAN_AGN_ISN" />
+                <ScalarProperty Name="PES_RH_RHT_ISN" ColumnName="PES_RH_RHT_ISN" />
+                <ScalarProperty Name="PES_RH_RHE_ISN" ColumnName="PES_RH_RHE_ISN" />
+                <ScalarProperty Name="PES_RH_VAL_ISN" ColumnName="PES_RH_VAL_ISN" />
+                <ScalarProperty Name="PES_RH_RCT_ISN" ColumnName="PES_RH_RCT_ISN" />
+                <ScalarProperty Name="PES_RH_RHT_QTD" ColumnName="PES_RH_RHT_QTD" />
+                <ScalarProperty Name="PES_RH_CTP" ColumnName="PES_RH_CTP" />
+                <ScalarProperty Name="PES_RH_PIS" ColumnName="PES_RH_PIS" />
+                <ScalarProperty Name="PES_RH_DEF" ColumnName="PES_RH_DEF" />
+                <ScalarProperty Name="PES_RH_RAC_ISN" ColumnName="PES_RH_RAC_ISN" />
+                <ScalarProperty Name="PES_RH_INS_ISN" ColumnName="PES_RH_INS_ISN" />
+                <ScalarProperty Name="PES_RH_AGN_ISN" ColumnName="PES_RH_AGN_ISN" />
+                <ScalarProperty Name="PES_RH_BAN_CC" ColumnName="PES_RH_BAN_CC" />
+                <ScalarProperty Name="PES_RH_BAN_ISN" ColumnName="PES_RH_BAN_ISN" />
+                <ScalarProperty Name="PES_DEP_STS" ColumnName="PES_DEP_STS" />
+                <ScalarProperty Name="PES_CBK_CLU_DSC" ColumnName="PES_CBK_CLU_DSC" />
+                <ScalarProperty Name="PES_FON_LON" ColumnName="PES_FON_LON" />
+                <ScalarProperty Name="PES_CBK_ID" ColumnName="PES_CBK_ID" />
+                <ScalarProperty Name="PES_CBK_NUM_ANT" ColumnName="PES_CBK_NUM_ANT" />
+                <ScalarProperty Name="PES_CBK_CER" ColumnName="PES_CBK_CER" />
+                <ScalarProperty Name="PES_CBK_EST" ColumnName="PES_CBK_EST" />
+                <ScalarProperty Name="PES_CBK_GRA" ColumnName="PES_CBK_GRA" />
+                <ScalarProperty Name="PES_CBK_FAX_BRA" ColumnName="PES_CBK_FAX_BRA" />
+                <ScalarProperty Name="PES_CBK_FAX_AMA" ColumnName="PES_CBK_FAX_AMA" />
+                <ScalarProperty Name="PES_CBK_FAX_VER" ColumnName="PES_CBK_FAX_VER" />
+                <ScalarProperty Name="PES_CBK_FAX_LAR" ColumnName="PES_CBK_FAX_LAR" />
+                <ScalarProperty Name="PES_CBK_FAX_VED" ColumnName="PES_CBK_FAX_VED" />
+                <ScalarProperty Name="PES_CBK_FAX_ROX" ColumnName="PES_CBK_FAX_ROX" />
+                <ScalarProperty Name="PES_CBK_FAX_MAR" ColumnName="PES_CBK_FAX_MAR" />
+                <ScalarProperty Name="PES_CBK_FAX_DAN_1" ColumnName="PES_CBK_FAX_DAN_1" />
+                <ScalarProperty Name="PES_CBK_FAX_DAN_2" ColumnName="PES_CBK_FAX_DAN_2" />
+                <ScalarProperty Name="PES_CBK_FAX_DAN_3" ColumnName="PES_CBK_FAX_DAN_3" />
+                <ScalarProperty Name="PES_CBK_FAX_DAN_4" ColumnName="PES_CBK_FAX_DAN_4" />
+                <ScalarProperty Name="PES_CBK_FAX_DAN_5" ColumnName="PES_CBK_FAX_DAN_5" />
+                <ScalarProperty Name="PES_CBK_FAX_DAN_6" ColumnName="PES_CBK_FAX_DAN_6" />
+                <ScalarProperty Name="PES_CBK_FAX_DAN_7" ColumnName="PES_CBK_FAX_DAN_7" />
+                <ScalarProperty Name="PES_CBK_FAX_DAN_8" ColumnName="PES_CBK_FAX_DAN_8" />
+                <ScalarProperty Name="PES_CBK_FAX_DAN_9" ColumnName="PES_CBK_FAX_DAN_9" />
+                <ScalarProperty Name="PES_CBK_TRA" ColumnName="PES_CBK_TRA" />
+                <ScalarProperty Name="PES_COM_FIN" ColumnName="PES_COM_FIN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROFISSAO">
+            <EntityTypeMapping TypeName="BANCOMSPModel.PROFISSAO">
+              <MappingFragment StoreEntitySet="PROFISSAO">
+                <ScalarProperty Name="PRO_ISN" ColumnName="PRO_ISN" />
+                <ScalarProperty Name="PRO_NOM" ColumnName="PRO_NOM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RELIGIAO">
+            <EntityTypeMapping TypeName="BANCOMSPModel.RELIGIAO">
+              <MappingFragment StoreEntitySet="RELIGIAO">
+                <ScalarProperty Name="REL_ISN" ColumnName="REL_ISN" />
+                <ScalarProperty Name="REL_DSC" ColumnName="REL_DSC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SEXO">
+            <EntityTypeMapping TypeName="BANCOMSPModel.SEXO">
+              <MappingFragment StoreEntitySet="SEXO">
+                <ScalarProperty Name="SEX_ISN" ColumnName="SEX_ISN" />
+                <ScalarProperty Name="SEX_DSC" ColumnName="SEX_DSC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,157 @@
+﻿@model List<msp.Models.PESSOA>
+@{
+    ViewBag.Title = "LISTA CLIENTES";
+}
+
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Lista Clientes</h2>
+        </div>
+        <div class="panel-body">
+            @*<img id="progbar" src='../Images/progbar.gif' width="20%">*@
+            <div class="form-actions no-color">
+                <p>@Html.ActionLink("Novo", "Create", "Cliente", new { pestip = "CLI" }, new { @class = "btn btn-default btn-sm" })</p>
+            </div>
+            <div id="lblaguarde" style="top:50%; text-align:center" ><h4><i class="fa fa-warning"></i>&nbsp;AGUARDE, carregando dados...</h4></div>
+
+            @if (Model != null)
+    {
+        <div class="table-responsive">
+            <table id="tblclientes" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Nome</th>
+                        <th>Chamado</th>
+                        <th>Cpf</th>
+                        <th>Endereço</th>
+                        <th>Email</th>
+                        <th>&nbsp;</th>
+                        @*<th>&nbsp;</th>*@
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>@item.PES_TIP_SEQ</td>
+                        <td>@item.PES_NOM</td>
+                        <td>@item.PES_CHA </td>
+                        <td>@item.PES_CPF_CNP</td>
+                        <td>@item.PES_END</td>
+                        <td>@item.PES_EMA</td>
+                        <td><a href="@Url.Content("~/Cliente/Edit/"+item.PES_ISN)"><i class="fa fa-search"><span  style="font-family:Arial; font-size:12px">Visualizar&nbsp;</span></i></a></td>
+                        @*<td><a href="#" onclick="excluir(@item.PES_ISN,'@item.PES_NOM')"><i class="fa fa-trash"></i></a></td>*@
+                    </tr>
+    }
+                </tbody>
+            </table>
+        </div>
+}
+else
+{
+        <h4>Sem registros para listar</h4>
+}
+        </div>
+    </div>
+</div>
+@*<div class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Excluir Cliente</h4>
+            </div>
+            <div class="modal-body">
+                <p>Deseja realmente excluir o cliente <h3 id="lblcliente"></h3>?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                <button type="button" id="btn_excluir" class="btn btn-danger" onclick="excluir()">Excluir</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->*@
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script>
+    $().ready(function () {
+
+        $('#tblclientes').dataTable({
+            //sLoadingRecords: "<span style='width:100%;'><img src='../Images/progbar.gif'></span>",
+            "language": {
+                "loadingRecords": "Please wait - loading...",
+                "emptyTable": "Sem dados nas tabelas",
+                "info": "Exibindo _START_ de _END_ no total _TOTAL_ registros",
+                "infoEmpty": "Total 0 de 0 de 0 registros procurados",
+                "infoFiltered": "(Procurado em todos _MAX_ cadastrados)",
+                "lengthMenu": "Exibe _MENU_ por páginas",
+                "loadingRecords": "Carregando...",
+                "processing": "Processando...",
+                "search": "Buscar:",
+                "zeroRecords": "Registro não encontrado",
+                "paginate": {
+                    "first": "Primeira",
+                    "last": "Última",
+                    "next": "Proximo",
+                    "previous": "Voltar"
+                }
+            }
+        });
+
+        
+        $("#tblclientes_filter > label > input[type='search']").after(function () {
+            $("#lblaguarde").hide();
+        });
+
+    });
+
+        function excluir(cli_id, cli_nome) {
+            ConfirmaExclusao(cli_id,cli_nome);
+        }
+
+        function ConfirmaExclusao(cli_id, cli_nome) {
+         var janela_modal = "<div id='janela_excluir' class='modal fade' tabindex='-1' role='dialog'>"+
+                "<div class='modal-dialog' role='document'>"+
+                    "<div class='modal-content'>"+
+                        "<div class='modal-header'>"+
+                            "<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button>"+
+                            "<h4 class='modal-title'>Excluir Cliente</h4>"+
+                        "</div>"+
+                        "<div class='modal-body'>"+
+                            "<p>Deseja realmente excluir o cliente <b><span id='lblcliente' class='text-danger'></span>&nbsp;?</b></p>"+
+                        "</div>"+
+                        "<div class='modal-footer'>"+
+                            "<button type='button' class='btn btn-warning' data-dismiss='modal'>Cancelar</button>"+
+                            "<button type='button' id='btn_excluir' class='btn btn-danger' onclick='confirmada_exclusao("+cli_id+")'>Excluir</button>"+
+                        "</div>"+
+                    "</div>"+
+    "</div>"+
+                "</div>"
+
+         if ($("#janela_excluir").length == 0) {
+             $("body").append(janela_modal);
+         } else {
+             $("#janela_excluir").remove();
+             $("body").append(janela_modal);
+         }
+
+         $("#janela_excluir").modal("show");
+         $("#lblcliente").empty();
+         $("#lblcliente").append(cli_nome);
+         console.log(cli_nome);
+
+        }
+
+        function confirmada_exclusao(cli_id) {
+            $.get("@Url.Content("~/Cliente/Excluir/")" + cli_id, function () {
+                 var surl = "@Url.Content("~/Cliente/Listar")";
+                 window.location = surl;
+            }).done(function () {
+               // alert("second success");
+            });
+        }
+</script>
+}
+
